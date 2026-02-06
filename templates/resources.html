@@ -11,12 +11,23 @@
 
   <!-- Background pattern -->
   <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
-
+  <!-- Top Bar -->
+<div class="absolute top-0 left-0 w-full flex items-center justify-between
+            px-10 py-4 z-20 border-b border-white/60">
   <!-- Logo -->
-  <div class="absolute top-4 left-4 z-20">
-    <img src="{{ url_for('static', filename='eknal_link.png') }}" alt="Eknal Link Logo" class="h-8 sm:h-12">
-  </div>
+  <img src="{{ url_for('static', filename='eknal_link.png') }}"
+       alt="Eknal Link Logo"
+       class="h-8 sm:h-12">
 
+  <!-- Navigation -->
+  <a href="/collaborators"
+     class="text-indigo-700 font-semibold
+            border-b-2 border-transparent
+            hover:border-indigo-500 hover:text-indigo-500 transition">
+     Collaborators
+  </a>
+
+</div>
   <!-- Main Content -->
   <div class="flex-grow flex flex-col items-center px-4 pt-24 pb-12 relative z-10 w-full max-w-3xl mx-auto">
 
