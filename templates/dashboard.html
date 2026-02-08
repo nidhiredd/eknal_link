@@ -190,6 +190,12 @@
      class="text-amber-600 hover:underline">
     Edit
   </a>
+ <!-- Preview -->
+  <!-- <a href="{{ url_for('preview_file', id=file.id) }}"
+     target="_blank"
+     class="text-indigo-600 hover:underline">
+    Preview
+  </a> -->
 
   <form action="{{ url_for('delete_file', id=file.id) }}"
         method="post"

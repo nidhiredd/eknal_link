@@ -93,21 +93,23 @@
 
 <!-- Files -->
 {% for file in files %}
-
-<a href="{{ url_for('download', id=file.id) }}" download
+<a href="{{ url_for('preview_file', id=file.id) }}"
+   target="_blank"
    class="block transition transform hover:-translate-y-1 shadow-md
           bg-gradient-to-r from-yellow-500 to-orange-500
           text-white font-semibold p-4 rounded-2xl
           hover:from-orange-500 hover:to-yellow-500">
 
-  <div class="flex justify-center items-center">
-    <span class="capitalize text-center">
+  <div class="flex flex-col items-center text-center gap-1">
+    <span class="capitalize text-lg">
       {{ file.title }}
+    </span>
+    <span class="text-xs opacity-90">
+      Preview • Download available
     </span>
   </div>
 
 </a>
-
 {% endfor %}
 </main>
 </div>

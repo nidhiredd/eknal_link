@@ -205,7 +205,15 @@ def edit_file(id):
 def download(id):
     f = FileUpload.query.get_or_404(id)
     return send_from_directory(UPLOAD_FOLDER, f.filename, as_attachment=True)
+@app.route("/preview/<int:id>")
 
+def preview_file(id):
+    file = FileUpload.query.get_or_404(id)
+    return send_from_directory(
+        app.config["UPLOAD_FOLDER"],
+        file.filename,
+        as_attachment=False  
+    )
 @app.route("/delete-file/<int:id>", methods=["POST"])
 @admin_required
 def delete_file(id):
